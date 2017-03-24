@@ -1,13 +1,13 @@
 var domMemoize = function() {
   var cache = {};
 
-  function saveQuery(queryVal, personalReference) {
-    domElements.personalReference = document.querySelector(queryVal);
+  function saveQuery(queryVal) {
+    cache.queryVal = document.querySelector(queryVal);
   }
 
-  function useQuery(personalReference) {
-    if (cache.personalReference !== undefined) {
-      return cache.personalReference;
+  function useQuery(queryVal) {
+    if (cache.queryVal !== undefined) {
+      return cache.queryVal;
     } else {
       return false;
     }
