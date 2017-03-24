@@ -5,9 +5,9 @@ var domMemoize = function() {
     cache[queryVal] = document.querySelector(queryVal);
   }
 
-  function useQuery(queryVal) {
-    if (cache[queryVal] !== undefined) {
-      return cache[queryVal];
+  function useQuery(queryVal, index) {
+    if (cache[queryVal].index !== undefined) {
+      return cache[queryVal].index;
     } else {
       return false;
     }
@@ -19,6 +19,7 @@ var domMemoize = function() {
 
   return {
     saveQuery,
-    useQuery
+    useQuery,
+    saveQueryCollection
   };
 };
